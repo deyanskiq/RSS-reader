@@ -1,0 +1,14 @@
+<% flash.each do |name, msg| %>
+  <%= name %>: <%= msg %>
+<% end %>
+
+<p>New feed</p>
+
+<%= form_for @feed, :url => feeds_path do |f| %>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+
+	<%= f.submit 'Create feed'%>
+<% end %>
+
+<%= link_to 'List all feeds', feeds_path %>
